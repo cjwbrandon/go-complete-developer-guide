@@ -1,16 +1,17 @@
 package main
 
+import "fmt"
+
 // Slices and For Loops
 func main() {
 	// Declaring a slice
-	cards := deck{newCard(), "Ace of Diamonds"}
-	// Adding elements
-	cards = append(cards, "Six of Spades") // Does not mutate, returns new slice
+	cards := newDeck()
 
-	cards.print()
-}
+	hand, remainingCards := deal(cards, 5)
+	hand.print()
+	remainingCards.print()
 
-// Function
-func newCard() string {
-	return "Five of Diamonds"
+	fmt.Println(cards.toString())
+
+	cards.saveToFile("my_cards")
 }
