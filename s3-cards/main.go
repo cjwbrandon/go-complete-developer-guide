@@ -1,17 +1,19 @@
 package main
 
-import "fmt"
-
 // Slices and For Loops
 func main() {
 	// Declaring a slice
-	cards := newDeck()
+	// cards := newDeck()
 
-	hand, remainingCards := deal(cards, 5)
-	hand.print()
-	remainingCards.print()
+	// hand, remainingCards := deal(cards, 5)
+	// hand.print()
+	// remainingCards.print()
 
-	fmt.Println(cards.toString())
+	// fmt.Println(cards.toString())
 
-	cards.saveToFile("my_cards")
+	// cards.saveToFile("my_cards")
+
+	cards := newDeckFromFile("my_cards")
+	cards.shuffle()
+	cards.print()
 }
